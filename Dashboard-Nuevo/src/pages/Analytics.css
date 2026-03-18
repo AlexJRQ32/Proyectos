@@ -1,0 +1,70 @@
+.analytics-page {
+    padding: 20px;
+    height: auto;
+    display: flex;
+    width: 100%;    
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.analytics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-card {
+    background: #242629;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    width: 60%;
+    height: auto;
+    align-self: flex-start;
+}
+
+.chart-card-2 {
+    background: #242629;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    width: 30%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.chart-wrapper {
+    height: 300px; /* 👈 FUNDAMENTAL: Sin esto la gráfica no se ve */
+    width: 100%;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #fffffe;
+}
+
+.analytics-page h1{
+    margin-bottom: 10px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 30px;
+}
+
+.chart-card:hover{
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid #333;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.chart-card-2:hover{
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid #333;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}

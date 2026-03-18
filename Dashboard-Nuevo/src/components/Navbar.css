@@ -1,0 +1,57 @@
+.nav-top{
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: var(--social-bg);
+    box-shadow: var(--shadow);
+
+}
+
+.nav-top h2{
+    display: flex;
+
+    font-size: 22px;
+    justify-content: left;
+    padding: 0 20px;
+}
+
+.nav-top ul{
+    display: flex;
+    margin-left: auto;
+    gap: 20px;
+    justify-content: end;
+    font-size: small;
+    text-decoration: none;
+    padding: 0 20px;
+}
+
+.nav-top li{
+    display: flex;
+    color: var(--accent);
+    padding: 0 10px;
+    border-radius: 20px;
+}
+
+.nav-top li a span{
+    padding: 0 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--accent);
+}
+
+.nav-top li a{
+    text-decoration: none;
+}
+
+.login{
+    margin-left: 30px;
+    border: 1px solid var(--accent-border);
+}
+
+.nav-top li:hover{
+    background-color: var(--accent-border);
+    transform: scale(1.08);
+    transition: all 0.3s ease;
+}
