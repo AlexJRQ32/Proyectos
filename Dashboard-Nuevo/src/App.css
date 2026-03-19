@@ -16,13 +16,18 @@ main{
 }
 
 .container-main{
-  margin-left: 30px ;
+  margin: 30px;
   display: flex;
   width: 100%;
   justify-content: center;
-  align-items: top;
+  align-items: flex-start; /* 'top' es invalido en flexbox, debe ser 'flex-start' */
   box-sizing: border-box;
   overflow-y: auto;
+}
+
+.container-main::-webkit-scrollbar{
+  width: 0;
+  display: none;
 }
 
 .container h2{
@@ -34,3 +39,24 @@ main{
   box-sizing: border-box;
 }
 
+
+@media (max-width: 768px) {
+  .container {
+    height: auto;
+    overflow-y: auto;
+  }
+
+  main {
+    flex-direction: column;
+    height: auto;
+    overflow-y: visible;
+    padding-bottom: 70px; /* Space for the bottom nav */
+  }
+
+  .container-main {
+    margin: 10px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    overflow-y: visible;
+  }
+}

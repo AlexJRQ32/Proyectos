@@ -2,13 +2,12 @@ import './Navbar-left.css';
 import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
-    { to: '/', icon: 'fa-solid fa-house', label: 'Home' },
+    { to: '/home', icon: 'fa-solid fa-house', label: 'Home' },
     { to: '/orders', icon: 'fa-solid fa-cart-shopping', label: 'Orders' },
     { to: '/finances', icon: 'fa-solid fa-money-bill-trend-up', label: 'Finances' },
-    { to: '/analytics', icon: 'fa-solid fa-chart-line', label: 'Analitycs' },
+    { to: '/analytics', icon: 'fa-solid fa-chart-line', label: 'Analytics' },
     { to: '/inventory', icon: 'fa-solid fa-boxes-stacked', label: 'Inventory' },
-    { to: '/schedule', icon: 'fa-solid fa-calendar-days', label: 'Schedule' },
-    { to: '/settings', icon: 'fa-solid fa-gear', label: 'Settings' }
+    { to: '/schedule', icon: 'fa-solid fa-calendar-days', label: 'Schedule' }
 ];
 
 function NavbarLeft(){

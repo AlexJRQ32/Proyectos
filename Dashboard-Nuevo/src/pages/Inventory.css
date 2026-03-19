@@ -82,3 +82,53 @@
     transform: scale(1.03);
     transition: all 0.3s ease;
 }
+
+.inventory-item button:first-child{
+    margin-left: auto;
+}
+
+.inventory-item button:last-child{
+    margin-left: 10px;
+}
+
+.inventory-item button{
+    margin-left: auto;
+}
+
+.inventory-item span{
+    padding-left: 50px;
+}
+
+.inventory-item:first-child{
+    padding-left: 0;
+}
+
+@media (max-width: 768px) {
+    .inventory-page {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .inventory-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .inventory-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .inventory-item span {
+        padding-left: 0;
+    }
+
+    .inventory-item button:first-child,
+    .inventory-item button:last-child,
+    .inventory-item button {
+        margin-left: 0;
+    }
+}

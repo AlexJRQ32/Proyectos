@@ -18,35 +18,20 @@
     align-items: center;
 }
 
-.chart-card {
-    background: #242629;
+.chart-card:first-child {
     padding: 20px;
     border-radius: 12px;
-    border: 1px solid #333;
     width: 60%;
     height: auto;
     align-self: flex-start;
 }
 
-.chart-card-2 {
-    background: #242629;
+.chart-card:last-child {
     padding: 20px;
     border-radius: 12px;
-    border: 1px solid #333;
     width: 30%;
     height: auto;
     margin-bottom: 20px;
-}
-
-.chart-wrapper {
-    height: 300px; /* 👈 FUNDAMENTAL: Sin esto la gráfica no se ve */
-    width: 100%;
-}
-
-h2 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #fffffe;
 }
 
 .analytics-page h1{
@@ -67,4 +52,21 @@ h2 {
     border: 1px solid #333;
     transform: scale(1.05);
     transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+    .analytics-grid {
+        flex-direction: column;
+    }
+
+    .chart-card:first-child,
+    .chart-card:last-child {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .stats-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
 }

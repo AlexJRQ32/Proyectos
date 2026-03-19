@@ -2,22 +2,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border: none;
     padding: 0;
     box-sizing: border-box;
     background-color: var(--accent);
     font-size: 20px;
-    border-radius: 10px;
+    border-radius: 50%;
     box-shadow: 5px 2px 7px rgba(8, 8, 8, .26);
 }
 
 .btn-cambios i{
     display: flex;
     transition: transform 0.4s;
-    width: 100%;
-    height: 100%;
     justify-content: center;
     align-items: center;
     color: black;
@@ -36,6 +34,12 @@
 }
 
 .btn-trash:hover, .btn-trash i:hover{
+    transform: scale(1.08);
+    transition: 0.3s;
+    font-size: 26px;
+}
+
+.btn-edit:hover, .btn-edit i:hover{
     transform: scale(1.08);
     transition: 0.3s;
     font-size: 26px;

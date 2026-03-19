@@ -1,17 +1,21 @@
-.nav-top{
+.nav-top {
     margin: 0;
     width: 100%;
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: var(--social-bg);
+    background-color: #1e1e22; /* Solid color */
     box-shadow: var(--shadow);
-
+    position: relative;
+    z-index: 1100;
+    justify-content: space-between; /* To push h2 and buttons apart */
 }
+
+
+
 
 .nav-top h2{
     display: flex;
-
     font-size: 22px;
     justify-content: left;
     padding: 0 20px;
@@ -54,4 +58,77 @@
     background-color: var(--accent-border);
     transform: scale(1.08);
     transition: all 0.3s ease;
+}
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1200;
+    padding: 0 15px;
+    order: 2; /* Push to the right in the flex container */
+}
+
+.mobile-sidebar {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    left: auto;
+    width: 250px;
+    height: calc(100vh - 60px);
+    background-color: #1e1e22; /* Solid color */
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5); /* Shadow on the left */
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+.mobile-sidebar.active {
+    right: 0;
+}
+
+.mobile-sidebar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-sidebar li {
+    padding: 0 25px;
+}
+
+.mobile-sidebar a {
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+}
+
+.login-item {
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px !important;
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links-desktop {
+        display: none !important;
+    }
+
+    .nav-top h2 {
+        font-size: 18px;
+        padding-left: 15px;
+        order: 1;
+    }
 }

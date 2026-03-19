@@ -1,31 +1,74 @@
 import './StatsCard.css';
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
-function StatsCard() {
+const RadialProgress = ({ percentage, color }) => {
+    const data = [
+        { name: "Completed", value: percentage },
+        { name: "Remaining", value: 100 - percentage },
+    ];
+
     return (
-        <div className="stats-grid">
-            <div className="stat-card">
-                <div className="stat-icon" style={{background: '#7f5af022', color: '#7f5af0'}}>
-                    <i className="fa-solid fa-chart-line"></i>
-                </div>
-                <div>
-                    <p>Ventas Totales</p>
-                    <h3>$15,240.00</h3>
-                    <span className="trend positive">+12% vs mes anterior</span>
-                </div>
+        <div className="radial-wrapper">
+            <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                    <Pie
+                        data={data}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={28}
+                        outerRadius={35}
+                        startAngle={90}
+                        endAngle={450}
+                        dataKey="value"
+                        stroke="none"
+                        cornerRadius={10}
+                    >
+                        <Cell fill={color} />
+                        <Cell fill="#2a2a2e" />
+                    </Pie>
+                </PieChart>
+            </ResponsiveContainer>
+            <div className="radial-text">
+                <span>{percentage}%</span>
             </div>
-            <div className="stat-card">
-                <div className="stat-icon" style={{background: '#2cb67d22', color: '#2cb67d'}}>
-                    <i className="fa-solid fa-box"></i>
-                </div>
-                <div>
-                    <p>Stock Bajo</p>
-                    <h3>12 productos</h3>
-                    <span className="trend negative">Revisar inventario</span>
-                </div>
-            </div>
-            
         </div>
-    )
+    );
+};
+
+const TREND_COLORS = {
+    positive: '#2cb67d',
+    negative: '#ef4565',
+    neutral: '#fca311',
+};
+
+function StatsCard({ title, value, trend, icon, percentage }) {
+    const trendClass = trend.startsWith('+') ? 'positive'
+        : trend.startsWith('-') ? 'negative'
+        : 'neutral';
+
+    const color = TREND_COLORS[trendClass];
+
+    return (
+        <div className={`stat-card ${trendClass}`}>
+            <div className="card-left">
+                <div className="card-header">
+                    {icon && (
+                        <div className="stat-icon">
+                            <i className={icon}></i>
+                        </div>
+                    )}
+                    <span className="card-label">{title}</span>
+                </div>
+                <h3 className="card-value">{value}</h3>
+                <span className={`trend ${trendClass}`}>{trend}</span>
+            </div>
+            {percentage != null && (
+                <div className="card-right">
+                    <RadialProgress percentage={percentage} color={color} />
+                </div>
+            )}
+        </div>
+    );
 }
 
 export default StatsCard;

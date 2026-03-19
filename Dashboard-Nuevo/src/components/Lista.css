@@ -1,0 +1,83 @@
+h2{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-border);
+    text-align: center;
+}
+
+.lista-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.lista-table th{
+    text-align: center;
+    color: #94a1b2;
+    padding: 20px;
+    font-size: 0.85rem;
+    border-bottom: 2px solid #333;
+}
+
+.lista-table tr{
+    text-align: center;
+    border-bottom: 1px solid #333;
+    padding: 20px;
+}
+
+.lista-table td{
+    text-align: center;
+    color: #94a1b2;
+    padding: 10px;
+    border-bottom: 2px solid #333;
+}
+
+.completed p{
+    border-radius: 25px;
+    background-color: #333;
+    padding: 5px 0px;
+    width: 140px;
+    margin: 0 auto;
+}
+
+.pending p{
+    border-radius: 25px;
+    background-color: #333;
+    padding: 5px 0px;
+    width: 140px;
+    margin: 0 auto;
+}
+
+.cancelled p{
+    border-radius: 25px;
+    background-color: #333;
+    padding: 5px 0px;
+    width: 140px;
+    margin: 0 auto;
+} 
+
+.cancelled {
+    color: #ef4565 !important;
+}
+
+.completed {
+    color: #2cb67d !important;
+}
+
+.pending {
+    color: #f5a623 !important;
+}
+@media (max-width: 768px) {
+    .lista-table th, 
+    .lista-table td {
+        padding: 10px 5px;
+        font-size: 0.75rem;
+    }
+
+    .completed p, 
+    .pending p, 
+    .cancelled p {
+        width: 80px;
+        font-size: 0.7rem;
+    }
+}

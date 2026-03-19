@@ -1,5 +1,5 @@
 .nav-left{
-    background-color: var(--social-bg);
+    background-color: #1e1e22;
     box-shadow: var(--shadow);
     margin: 0;
     padding: 0;
@@ -31,7 +31,6 @@
     height: 40px;
     padding-left: 20px;
     padding-right: 20px;
-    
     text-decoration: none;
     box-sizing: border-box;
 }
@@ -98,5 +97,61 @@
     background-color: var(--accent-border);
     transform: scale(1.08);
     transition: all 0.3s ease;
+}
+
+
+
+@media (max-width: 768px) {
+    .nav-left {
+        width: 100%;
+        height: 60px;
+        flex-direction: row;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    .nav-left ul {
+        flex-direction: row;
+        margin: 0;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+    }
+
+    .nav-left li {
+        width: auto;
+        padding: 0 10px;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .nav-left li a {
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-left li a span {
+        font-size: 10px;
+    }
+
+    .usuario {
+        display: none; /* Hide profile/logout on mobile nav by default or move it */
+    }
+
+    .nav-left li:hover,
+    .nav-left li.active {
+        margin-left: 0;
+        border-right: none;
+        border-top: 3px solid var(--accent);
+        transform: none;
+    }
+
+
 }
 

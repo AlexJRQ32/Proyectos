@@ -1,0 +1,9 @@
+.chart-wrapper {
+    height: 300px; /* 👈 FUNDAMENTAL: Sin esto la gráfica no se ve */
+    width: 100%;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #fffffe;
+}
