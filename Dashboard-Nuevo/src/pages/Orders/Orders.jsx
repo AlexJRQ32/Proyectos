@@ -1,6 +1,6 @@
 import './Orders.css';
-import Lista from '../components/Lista';
-import StatsCard from '../components/StatsCard';
+import List from '../../components/List/List';
+import StatsCard from '../../components/StatsCard/StatsCard';
 
 function Orders() {
     const ordersData = [
@@ -35,7 +35,7 @@ function Orders() {
                 ))}
             </div>
             <section className="orders-container">
-                <Lista encabezado="Recent Orders" data={ordersData} dataKeyX="Order ID" dataKeyY="Client" dataKeyZ="Products" dataKeyW="Total" dataKeyV="Status"/>
+                <List title="Recent Orders" data={ordersData} dataKeyX="Order ID" dataKeyY="Client" dataKeyZ="Products" dataKeyW="Total" dataKeyV="Status"/>
             </section>
         </div>
     )

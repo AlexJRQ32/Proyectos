@@ -98,7 +98,16 @@
 }
 
 .mobile-sidebar li {
-    padding: 0 25px;
+    padding: 10px 20px;
+    margin: 0 20px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.mobile-sidebar li:hover{
+    background-color: var(--accent-border) !important;
+    transform: translateY(-5px) !important;
+    transition: all 0.3s ease;
 }
 
 .mobile-sidebar a {
@@ -112,12 +121,10 @@
 }
 
 .login-item {
-    margin-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px !important;
+    border: 1px solid var(--accent-border);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 810px) {
     .menu-btn {
         display: block;
     }

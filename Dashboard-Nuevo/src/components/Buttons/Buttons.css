@@ -1,4 +1,4 @@
-.btn-cambios{
+.btn-changes{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@
     box-shadow: 5px 2px 7px rgba(8, 8, 8, .26);
 }
 
-.btn-cambios i{
+.btn-changes i{
     display: flex;
     transition: transform 0.4s;
     justify-content: center;
@@ -21,25 +21,27 @@
     color: black;
 }
 
-.btn-cambios:hover{
-    background:rgb(148, 118, 255);
+.btn-changes:hover{
     transform: scale(1.08);
     transition: 0.2s;
 }
 
-.btn-add i:hover{
+.btn-add:hover, .btn-add i:hover{
+    background: #2cb67d;
     transform: rotate(90deg);
     font-size: 26px;
     transition: 0.3s;
 }
 
 .btn-trash:hover, .btn-trash i:hover{
+    background: #e5383b;
     transform: scale(1.08);
     transition: 0.3s;
     font-size: 26px;
 }
 
 .btn-edit:hover, .btn-edit i:hover{
+    background: #fca311;
     transform: scale(1.08);
     transition: 0.3s;
     font-size: 26px;

@@ -1,6 +1,6 @@
-import './Lista.css';
+import './List.css';
 
-function Lista({title, data, dataKeyX, dataKeyY, dataKeyZ, dataKeyW, dataKeyV}) {
+function List({title, data, dataKeyX, dataKeyY, dataKeyZ, dataKeyW, dataKeyV}) {
     return (
         <>
             <h2>{title}</h2>
@@ -32,4 +32,4 @@ function Lista({title, data, dataKeyX, dataKeyY, dataKeyZ, dataKeyW, dataKeyV}) 
     )
 }
 
-export default Lista;
+export default List;

@@ -1,6 +1,6 @@
-import StatsCard from '../components/StatsCard';
-import LineChartContainer from '../components/LineChart';
-import PieChartContainer from '../components/PieChart';
+import StatsCard from '../../components/StatsCard/StatsCard';
+import LineChartContainer from '../../components/LineChart/LineChart';
+import PieChartContainer from '../../components/PieChart/PieChart';
 import './Analytics.css';
 
 const salesData = [

@@ -1,4 +1,4 @@
-import './Navbar-left.css';
+import './Sidebar.css';
 import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
@@ -19,7 +19,7 @@ function NavbarLeft(){
     };
 
     return(
-        <nav className="nav-left">
+        <nav className="sidebar">
             <ul>
                 {navLinks.map((link) => (
                     <li key={link.to} className={isActive(link.to) ? 'active' : ''}>
@@ -30,8 +30,8 @@ function NavbarLeft(){
                     </li>
                 ))}
             </ul>
-            <section className='usuario'>
-                <div className="usuario-info">
+            <section className='sidebar-footer'>
+                <div className="sidebar-footer-info">
                     <strong>Username</strong>
                     <p>Admin</p>
                 </div>

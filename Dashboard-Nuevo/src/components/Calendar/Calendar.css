@@ -48,11 +48,18 @@
     padding: 10px;
 }
 
+.fc:hover{
+    transform: scale(1.02);
+    transition: 0.3s;
+    box-shadow: var(--shadow);
+}
+
 /* Custom Pin Event */
 .calendar-event-pin {
     display: flex;
     align-items: center;
     gap: 8px;
+    overflow: hidden;
     padding: 4px 8px;
     background: rgba(127, 90, 240, 0.15);
     border: 1px solid rgba(127, 90, 240, 0.3);
@@ -62,25 +69,72 @@
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.calendar-event-pin:hover{
+    transform: translate(-50%, -5px);
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: visible;
+    white-space: normal;
+    z-index: 10001;
+    height: 30px;
+    position: absolute;
+    width: max-content;
+    max-width: 280px;
+    min-width: 100%;
+    left: 50%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    pointer-events: auto;
+    padding: 8px 12px;
+}
+
+.fc-day-sat .calendar-event-pin:hover,
+.fc-day-fri .calendar-event-pin:hover {
+    left: auto;
+    right: 0;
+    transform: translate(0, -5px);
+}
+
+.fc-day-sun .calendar-event-pin:hover {
+    left: 0;
+    transform: translate(0, -5px);
 }
 
 .calendar-event-pin i {
     color: #7f5af0;
     font-size: 11px;
     filter: drop-shadow(0 0 2px rgba(127, 90, 240, 0.5));
+    transition: color 0.3s;
 }
 
-.calendar-event-pin:hover {
-    background: rgba(127, 90, 240, 0.25);
-    border-color: #7f5af0;
-    transform: translateY(-1px);
-}
+
+/* .calendar-event-pin:hover already combined above */
 
 .fc-event {
     background: transparent !important;
     border: none !important;
+    overflow: visible !important; /* Crucial for hover visibility */
 }
 
 .fc-dayGridMonth-view .fc-event {
     margin-bottom: 2px 4px !important;
+}
+
+@media (max-width: 768px) {
+    .calendar-event-pin {
+        font-size: 10px;
+        padding: 2px 4px;
+        gap: 4px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    
 }

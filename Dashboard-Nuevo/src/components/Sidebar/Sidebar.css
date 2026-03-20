@@ -1,4 +1,4 @@
-.nav-left{
+.sidebar{
     background-color: #1e1e22;
     box-shadow: var(--shadow);
     margin: 0;
@@ -11,7 +11,7 @@
     flex-direction: column;
 }
 
-.nav-left ul{
+.sidebar ul{
     margin-top: 30px;
     display: flex;
     gap: 10px;
@@ -22,32 +22,40 @@
     font-size: small;
 }
 
-.nav-left li{
+.sidebar li{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     color: var(--accent);
     width: 100%;
-    height: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
+    height: 44px; /* Increased slightly for better mobile/desktop touch targets */
+    padding: 0; /* REMOVE PADDING FROM LI */
     text-decoration: none;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
-.nav-left li a{
+.sidebar li a{
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: inherit;
+    transition: none; /* Avoid transition delay on the link itself */
 }
 
 
 
-.nav-left span{
+.sidebar span{
     padding: 0 5px;
 }
 
-.usuario{
+.sidebar-footer{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -55,7 +63,7 @@
     align-items: center;
 }
 
-.usuario-info{
+.sidebar-footer-info{
     background-color: var(--accent-bg);
     margin-bottom: 20px;
     padding: 10px 0;
@@ -67,11 +75,11 @@
     box-shadow: var(--shadow);
 }
 
-.usuario-info p{
+.sidebar-footer-info p{
     margin: 0;
 }
 
-.usuario a{
+.sidebar-footer a{
     padding: 0 5px;
     font-size: small;
     padding: 0 20px; 
@@ -82,18 +90,18 @@
     font-size: 16px;
 }
 
-.nav-left li:hover,
-.nav-left li.active {
+.sidebar li:hover,
+.sidebar li.active {
     background-color: var(--accent-border);
-    transform: scale(1.08);
-    transition: all 0.3s ease;
-    margin-left: -7px;
-    border-right: 3px solid var(--accent);
+    transform: scale(1.05); /* Reduced scale slightly for stability */
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease;
+    margin-left: -5px;
+    border-right: 4px solid var(--accent);
 }
 
 
 
-.usuario a:hover{
+.sidebar-footer a:hover{
     background-color: var(--accent-border);
     transform: scale(1.08);
     transition: all 0.3s ease;
@@ -102,7 +110,7 @@
 
 
 @media (max-width: 768px) {
-    .nav-left {
+    .sidebar {
         width: 100%;
         height: 60px;
         flex-direction: row;
@@ -114,7 +122,7 @@
         padding: 0;
     }
 
-    .nav-left ul {
+    .sidebar ul {
         flex-direction: row;
         margin: 0;
         justify-content: space-around;
@@ -122,30 +130,37 @@
         height: 100%;
     }
 
-    .nav-left li {
+    .sidebar li {
         width: auto;
-        padding: 0 10px;
+        padding: 0; /* Move padding to <a> */
         justify-content: center;
         height: 100%;
+        display: flex;
+        align-items: center;
     }
 
-    .nav-left li a {
+    .sidebar li a {
         font-size: 14px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        padding: 0 15px;
+        width: 100%;
+        height: 100%;
+        color: inherit;
     }
 
-    .nav-left li a span {
+    .sidebar li a span {
         font-size: 10px;
     }
 
-    .usuario {
-        display: none; /* Hide profile/logout on mobile nav by default or move it */
+    .sidebar-footer {
+        display: none;
     }
 
-    .nav-left li:hover,
-    .nav-left li.active {
+    .sidebar li:hover,
+    .sidebar li.active {
         margin-left: 0;
         border-right: none;
         border-top: 3px solid var(--accent);

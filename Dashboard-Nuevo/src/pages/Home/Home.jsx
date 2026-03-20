@@ -1,9 +1,8 @@
-import { PieChart, Pie, Cell, ComposedChart, Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
 import "./Home.css";
-import StatsCard from "../components/StatsCard";
-import PieChartContainer from "../components/PieChart";
-import BarChartContainer from "../components/BarChart";
-import LineChartContainer from "../components/LineChart";
+import StatsCard from "../../components/StatsCard/StatsCard";
+import PieChartContainer from "../../components/PieChart/PieChart";
+import BarChartContainer from "../../components/BarChart/BarChart";
+import LineChartContainer from "../../components/LineChart/LineChart";
 
 function Home() {
 

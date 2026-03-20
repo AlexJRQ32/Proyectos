@@ -3,11 +3,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    margin: 100px;
+    width: calc(100% - 40px);
+    height: auto;
     box-sizing: border-box;
-    margin-top: 150px;
+    margin: 20px;
 }
 
 .schedule-header{
@@ -100,7 +99,6 @@
 @media (max-width: 768px) {
     .schedule-container {
         margin: 10px;
-        margin-top: 80px;
         width: calc(100% - 20px);
     }
 

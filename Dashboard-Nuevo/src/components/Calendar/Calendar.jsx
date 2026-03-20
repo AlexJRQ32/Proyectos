@@ -1,6 +1,6 @@
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import './Calendario.css';
+import './Calendar.css';
 
 function Calendario({ data = [] }){
     return(

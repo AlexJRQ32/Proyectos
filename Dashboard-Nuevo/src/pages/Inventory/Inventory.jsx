@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import BotonAgregar from "../components/BotonAgregar";
-import BotonEliminar from "../components/BotonEliminar";
-import Modal from "../components/Modal";
+import Buttons from "../../components/Buttons/Buttons";
+import Modal from "../../components/Modal/Modal";
 import './Inventory.css';
-import BotonEditar from "../components/BotonEditar";
 
 function Inventory() {
 
@@ -17,6 +15,7 @@ function Inventory() {
     const [newDescription, setNewDescription] = useState('');
     const [newQuantity, setNewQuantity] = useState('');
     const [newPrice, setNewPrice] = useState('');
+
 
     useEffect(() => {
         localStorage.setItem('inventory', JSON.stringify(inventory));
@@ -79,7 +78,7 @@ function Inventory() {
         <div className="inventory-page">
             <section className="inventory-header">
                 <h1>Inventory</h1>
-                <BotonAgregar onClick={handleAddItem} />
+                <Buttons icon="fa-solid fa-plus" onClick={handleAddItem} type="btn-add" />
             </section>
             <section className="inventory-container">
                 {inventory.length === 0 ? (
@@ -92,8 +91,8 @@ function Inventory() {
                             <span><strong>Quantity:</strong> {item.quantity}</span>
                             <span><strong>Price:</strong> {item.price}</span>
                             <span><strong>Total:</strong> {item.total}</span>
-                            <BotonEditar onClick={() => handleEditItem(item.id)} />
-                            <BotonEliminar onClick={() => handleDeleteItem(item.id)} />
+                            <Buttons icon="fa-solid fa-edit" onClick={() => handleEditItem(item.id)} type="btn-edit" />
+                            <Buttons icon="fa-solid fa-trash" onClick={() => handleDeleteItem(item.id)} type="btn-trash" />
                         </div>
                     ))
                 )}

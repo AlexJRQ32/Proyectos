@@ -1,8 +1,8 @@
 import './Finances.css';
-import PieChartContainer from '../components/PieChart';
-import StatsCard from '../components/StatsCard';
-import BarChartComponent from '../components/BarChart';
-import Lista from '../components/Lista';
+import PieChartContainer from '../../components/PieChart/PieChart';
+import StatsCard from '../../components/StatsCard/StatsCard';
+import BarChartComponent from '../../components/BarChart/BarChart';
+import List from '../../components/List/List';
 
 function Finances() {
 
@@ -68,7 +68,7 @@ function Finances() {
                 </div>
             </div>
             <section className="transactions-container">
-                <Lista data={transactionsData} dataKeyX="Date" dataKeyY="Concept" dataKeyZ="Category" dataKeyW="Amount" dataKeyV="Status"/>
+                <List title="Recent Transactions" data={transactionsData} dataKeyX="Date" dataKeyY="Concept" dataKeyZ="Category" dataKeyW="Amount" dataKeyV="Status"/>
             </section>
         </div>
     )

@@ -4,15 +4,14 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
-import Navbar from './components/Navbar'
-import NavbarLeft from './components/Navbar-left'
-import Orders from './pages/Orders'
-import Finances from './pages/Finances'
-import Analytics from './pages/Analytics'
-import Inventory from './pages/Inventory'
-import Schedule from './pages/Schedule'
-import Home from './pages/Home'
-import { MobileSidebar } from './components/Navbar'
+import Navbar from './components/Navbar/Navbar'
+import NavbarLeft from './components/Sidebar/Sidebar'
+import Orders from './pages/Orders/Orders'
+import Finances from './pages/Finances/Finances'
+import Analytics from './pages/Analytics/Analytics'
+import Inventory from './pages/Inventory/Inventory'
+import Schedule from './pages/Schedule/Schedule'
+import Home from './pages/Home/Home'
 
 
 
@@ -31,7 +30,8 @@ function App() {
         <NavbarLeft />
         <section className="container-main">
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Navigate to='/home' replace />} />
+            <Route path='/home' element={<Home />} />
             <Route path='/orders' element={<Orders />} />
             <Route path='/finances' element={<Finances />} />
             <Route path='/analytics' element={<Analytics />} />

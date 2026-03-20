@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import Modal from '../components/Modal';
-import BotonEliminar from '../components/BotonEliminar';
-import BotonAgregar from '../components/BotonAgregar';
-import BotonEditar from '../components/BotonEditar';
-import Calendario from '../components/Calendario';
+import Modal from '../../components/Modal/Modal';
+import Buttons from '../../components/Buttons/Buttons';
+import Calendario from '../../components/Calendar/Calendar';
 import './Schedule.css';
 
 function Schedule() {
@@ -74,7 +72,7 @@ function Schedule() {
         <div className="schedule-container">
             <section className="schedule-header">
                 <h1>Schedule</h1>
-                <BotonAgregar onClick={handleAddItem} />
+                <Buttons icon="plus" onClick={handleAddItem} type="btn-add" />
             </section>
 
             <section className="fechas-importantes">
@@ -85,8 +83,8 @@ function Schedule() {
                     datesList.map((item) => (
                         <div key={item.id} className="fecha-item">
                             <span>{item.date} - <strong>{item.event}</strong></span>
-                            <BotonEditar onClick={() => handleEditItem(item.id)} />
-                            <BotonEliminar onClick={() => deleteItem(item.id)} />
+                            <Buttons icon="edit" onClick={() => handleEditItem(item.id)} type="btn-edit" />
+                            <Buttons icon="trash" onClick={() => deleteItem(item.id)} type="btn-trash" />
                         </div>
                     ))
                 )}
